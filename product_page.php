@@ -66,7 +66,7 @@ img {
 
 <script>
         
-        let kursus;
+        let posts;
 		const dbUrl = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/wp-json/wp/v2/posts/"+<?php echo get_the_ID() ?>;
         
 
@@ -82,7 +82,7 @@ img {
         function showPosts() {
                 document.querySelector("h2").textContent = post.product_name;
                 document.querySelector(".product_price").textContent = post.product_price;
-                document.querySelector(".billede").src = kursus.billede.guid;
+                document.querySelector(".product_image").src = post.product_image;
             }
 
 			// document.querySelector(".luk").addEventListener("click", () => {
