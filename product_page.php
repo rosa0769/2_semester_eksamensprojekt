@@ -43,27 +43,14 @@ img {
 <section id="primary" class="content-area">
 <main id="main" class="site-main"> 
 
- <article class="kurset">
+ <article class="post">
             
             <div>
 			
-            <div class="infoboks"> 
-                  <h2 class="navn"></h2>
-            <p class="kortbeskrivelse"></p>
-            <p class="langbeskrivelse"></p>
- 
-			
-            <p class="pris"></p>
-            <p class="laengde"></p>
-            <p class="antal_deltagere"></p>
-            <p class="klassetrin"></p> 
-        
-        </div>
-            <img class="billede" src="" alt="">
-            <h3 class="underoverskrift1"></h3>
-            <p class="yderligereinfo_1"></p>
-            <h4 class="underoverskrift2"></h4>
-            <p class="yderligereinfo_2"></p>
+                  <h2 class="product_name"></h2>
+            <p class="product_price"></p>        
+            <img class="product_image" src="" alt="">
+            <p class="product_description"></p>
             </div>
         </article>
 
@@ -80,7 +67,7 @@ img {
 <script>
         
         let kursus;
-		const dbUrl = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/wp-json/wp/v2/post/"+<?php echo get_the_ID() ?>;
+		const dbUrl = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/wp-json/wp/v2/posts/"+<?php echo get_the_ID() ?>;
         
 
         async function getJson() { 
