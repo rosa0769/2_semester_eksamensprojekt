@@ -119,7 +119,7 @@ document.querySelector(".chosen").classList.remove("chosen");
 
 this.classList.add("chosen");
 
-//kalder function vis posts efter det nye filter er sat
+//kalder function showPosts efter det nye filter er sat på
 showPosts();
 }
 
@@ -136,7 +136,6 @@ klon.querySelector(".product_name").textContent = post.product_name;
 klon.querySelector(".product_imgage").src = post.product_image;
 klon.querySelector(".product_description").textContent = post.product_description;
 klon.querySelector(".product_price").textContent = "Price: "+ post.product_price;
-klon.querySelector(".seeMore").addEventListener("click", () => location.href=post.link);
 
 
 destination.appendChild(clone);
@@ -150,7 +149,7 @@ fetchData();
 
 </script>
 
-</section><!-- #section -->
+</section>
 
 
 <?php
