@@ -1667,62 +1667,6 @@ body.page .main-navigation {
   }
 }
 
-/* Social menu */
-.social-navigation {
-  margin-top: calc(1rem / 2);
-  text-align: left;
-}
-
-.social-navigation ul.social-links-menu {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-
-.social-navigation ul.social-links-menu li {
-  display: inline-block;
-  vertical-align: bottom;
-  vertical-align: -webkit-baseline-middle;
-  list-style: none;
-}
-
-.social-navigation ul.social-links-menu li:nth-child(n + 2) {
-  margin-left: 0.1em;
-}
-
-.social-navigation ul.social-links-menu li a {
-  border-bottom: 1px solid transparent;
-  display: block;
-  color: #111;
-  margin-bottom: -1px;
-  transition: opacity 110ms ease-in-out;
-}
-
-.social-navigation ul.social-links-menu li a:hover,
-.social-navigation ul.social-links-menu li a:active {
-  color: #111;
-  opacity: 0.6;
-}
-
-.social-navigation ul.social-links-menu li a:focus {
-  color: #111;
-  opacity: 1;
-  border-bottom: 1px solid #111;
-}
-
-.social-navigation ul.social-links-menu li a svg {
-  display: block;
-  width: 32px;
-  height: 32px;
-  transform: translateZ(0);
-}
-
-.social-navigation ul.social-links-menu li a svg#ui-icon-link {
-  transform: rotate(-45deg);
-}
 
 @media only screen and (min-width: 768px) {
   .site-title + .social-navigation,
@@ -1731,29 +1675,6 @@ body.page .main-navigation {
   }
 }
 
-/** === Footer menu === */
-.footer-navigation {
-  display: inline;
-}
-
-.footer-navigation > div {
-  display: inline;
-}
-
-.footer-navigation .footer-menu {
-  display: inline;
-  padding-left: 0;
-}
-
-.footer-navigation .footer-menu li {
-  display: inline;
-  margin-right: 1rem;
-}
-
-/*--------------------------------------------------------------
-  ## Next / Previous
-  --------------------------------------------------------------*/
-/* Next/Previous navigation */
 .post-navigation {
   margin: calc(3 * 1rem) 0;
 }
