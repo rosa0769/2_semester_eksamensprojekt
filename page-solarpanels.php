@@ -25,7 +25,7 @@ get_header();
 while ( have_posts() ) :
     the_post();
 
-    get_template_part( 'template-parts/content/content', 'content-page' );
+    get_template_part( 'template-parts/content/content', 'page' );
 
 
 endwhile; // End the loop.
@@ -42,10 +42,10 @@ endwhile; // End the loop.
 
 <script>
 
-let posts;
+let products;
       
 	  //url til wp restapi - læg mærke til den her kun indhenter data med kategori 1 (nummereringen til solar panels kategorien)
-	  const url = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/wp-json/wp/v2/posts/category=1";
+	  const url = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/index.php/wp-json/wp/v2/product?per_page=20&categories=30";
 	 
  
 	  const destination = document.querySelector("#overview");
@@ -54,29 +54,29 @@ let posts;
 	  // asynkron function som afventer og indhenter json data fra restdb
 	  async function fetchData() {
 		  const jsonData = await fetch(url);
-		  posts = await jsonData.json();
-		  showPosts();
+		  products = await jsonData.json();
+		  showProducts();
 	  }
 
-	  function showPosts() {
+	  function showProducts() {
             //const for destination af indhold og template
 
 		 
-			posts.forEach(post => {
+			products.forEach(product => {
                
         
 			   const clone = template.cloneNode(true).content;
 
-			        clone.querySelector(".product_name").textContent = post.product_name;
-		            clone.querySelector("product_image").src = post.product_image;
-		            clone.querySelector(".product_description").textContent = post.product_description;
-		            clone.querySelector(".product_price").textContent = post.product_price;
+			        clone.querySelector(".product_name").textContent = product.product_name;
+		            clone.querySelector("product_image").src = product.product_image;
+		            clone.querySelector(".product_description").textContent = product.product_description;
+		            clone.querySelector(".product_price").textContent = product.product_price;
 
 			        destination.appendChild(clone);
 		   });
 		   
 	   }
-	  hentData();
+	  fetchData();
 
 </script>
 

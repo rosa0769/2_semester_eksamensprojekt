@@ -63,7 +63,7 @@
 
     <main id="main" class="site-main">
         <section id="overview"></section>
-    </main><!-- #main -->
+    </main>
     
     <template>
     <article class="the_product">
@@ -79,12 +79,12 @@
 
 <script>
 
-let posts;
+let categories;
 let filter = "all_products";
 
 let newHeadline = document.querySelector("#headline");
   //url til restdb 
-  const url = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/wp-json/wp/v2/posts";
+  const url = "https://rosasahlholt.one/kea/2_semester/10_eksamensprojekt/wordpress/index.php/wp-json/wp/v2/product?per_page=20";
 
  //const for destinationen af indholdet og templaten
   const destination = document.querySelector("#overview");
@@ -93,8 +93,8 @@ let newHeadline = document.querySelector("#headline");
   // asynkron function som afventer og indhenter json data fra restdb
   async function fetchData() {
       const jsonData = await fetch(url);
-      posts = await jsonData.json();
-      showPosts();
+      products = await jsonData.json();
+      showProducts();
   }
   const filterButtons = document.querySelectorAll("#filterbutton");
 
@@ -119,23 +119,23 @@ document.querySelector(".chosen").classList.remove("chosen");
 
 this.classList.add("chosen");
 
-//kalder function showPosts efter det nye filter er sat på
-showPosts();
+//kalder function showProducts efter det nye filter er sat på
+showProducts();
 }
 
-function showPosts(){
-console.log(posts);
+function showProducts(){
+console.log(products);
 
 
 destination.textContent = "";
-posts.forEach(post => {
-if (filter == post.category || filter == "all_products" ) {
+products.forEach(product => {
+if (filter == product.category || filter == "all_products" ) {
 
 const clone = template.cloneNode(true).content;
-klon.querySelector(".product_name").textContent = post.product_name;
-klon.querySelector(".product_imgage").src = post.product_image;
-klon.querySelector(".product_description").textContent = post.product_description;
-klon.querySelector(".product_price").textContent = "Price: "+ post.product_price;
+clone.querySelector(".product_name").textContent = product.product_name;
+clone.querySelector(".product_image").src = product.product_image;
+clone.querySelector(".product_description").textContent = product.product_description;
+clone.querySelector(".product_price").textContent = "Price: "+ product.product_price;
 
 
 destination.appendChild(clone);

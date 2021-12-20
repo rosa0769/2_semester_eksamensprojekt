@@ -1,7 +1,7 @@
 <?php wp_footer(); ?>
 
 <style>
-	.footer p {
+.footer p {
   font-family: sans-serif;
   font-weight: 100;
   font-size: 0.8em;
