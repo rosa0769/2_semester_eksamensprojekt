@@ -21,6 +21,19 @@
   font-weight: bold;
   text-align: center;
 }
+@media screen and (max-width: 800px) {
+
+.footer ul li {
+  font-size: 0.8rem; 
+  margin: 1rem; }
+}
+@media screen and (max-width: 360px) {
+
+.footer ul li {
+  font-size: 0.5rem; 
+  margin: 0.2rem; }
+}
+
 </style>
 
 <!doctype html>

@@ -133,7 +133,7 @@ if (filter == product.category || filter == "all_products" ) {
 
 const clone = template.cloneNode(true).content;
 clone.querySelector(".product_name").textContent = product.product_name;
-clone.querySelector(".product_image").src = product.product_image;
+clone.querySelector(".product_image").src = "img/" + product.product_image + ".jpg";
 clone.querySelector(".product_description").textContent = product.product_description;
 clone.querySelector(".product_price").textContent = "Price: "+ product.product_price;
 
