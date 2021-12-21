@@ -79,7 +79,7 @@
 
 <script>
 
-let categories;
+let products;
 let filter = "all_products";
 
 let newHeadline = document.querySelector("#headline");
